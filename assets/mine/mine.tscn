@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://rcjye6mwd58t"]
+
+[ext_resource type="Texture2D" uid="uid://blbk1kkonssnr" path="res://assets/art/Tiny Swords (Update 010)/Resources/Gold Mine/GoldMine_Active.png" id="1_pl806"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_i2nc2"]
+radius = 64.0
+
+[node name="Mine" type="Area2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_i2nc2")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_pl806")
