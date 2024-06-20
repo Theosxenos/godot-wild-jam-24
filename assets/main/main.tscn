@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=4 uid="uid://cc4qianjqeiv0"]
+[gd_scene load_steps=14 format=4 uid="uid://cc4qianjqeiv0"]
 
 [ext_resource type="Texture2D" uid="uid://b8bo8lnmar2bo" path="res://assets/art/Tiny Swords (Update 010)/Terrain/Ground/Tilemap_Flat.png" id="1_4wi7c"]
 [ext_resource type="Texture2D" uid="uid://kl00522huomb" path="res://assets/art/Tiny Swords (Update 010)/Terrain/Ground/Tilemap_Elevation.png" id="2_kic6v"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://b5m56sy555fql" path="res://assets/woods/woods.tscn" id="4_xf7nv"]
 [ext_resource type="PackedScene" uid="uid://ditcnl8epvk1t" path="res://assets/house/house.tscn" id="5_22awt"]
 [ext_resource type="PackedScene" uid="uid://b26l3r2pl1anq" path="res://assets/tower/tower.tscn" id="5_xfexb"]
+[ext_resource type="PackedScene" uid="uid://c7nxwtask3wct" path="res://assets/goblin/goblin.tscn" id="8_dm7tl"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nmxbk"]
 texture = ExtResource("1_4wi7c")
@@ -147,3 +148,9 @@ shape = SubResource("RectangleShape2D_ds3pf")
 
 [node name="Tower" parent="Level" instance=ExtResource("5_xfexb")]
 position = Vector2(416, 288)
+
+[node name="Tower2" parent="Level" instance=ExtResource("5_xfexb")]
+position = Vector2(416, 224)
+
+[node name="Goblin" parent="Level" instance=ExtResource("8_dm7tl")]
+position = Vector2(864, 304)
