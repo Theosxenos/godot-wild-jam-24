@@ -1,7 +1,9 @@
-[gd_scene load_steps=5 format=4 uid="uid://cc4qianjqeiv0"]
+[gd_scene load_steps=7 format=4 uid="uid://cc4qianjqeiv0"]
 
 [ext_resource type="Texture2D" uid="uid://b8bo8lnmar2bo" path="res://assets/art/Tiny Swords (Update 010)/Terrain/Ground/Tilemap_Flat.png" id="1_4wi7c"]
 [ext_resource type="Texture2D" uid="uid://xix75jxifh7b" path="res://assets/art/Tiny Swords (Update 010)/Factions/Knights/Buildings/House/House_Red.png" id="2_h78fi"]
+[ext_resource type="PackedScene" uid="uid://duhrhs8fmpu34" path="res://assets/player/player.tscn" id="3_62xm0"]
+[ext_resource type="Texture2D" uid="uid://blbk1kkonssnr" path="res://assets/art/Tiny Swords (Update 010)/Resources/Gold Mine/GoldMine_Active.png" id="3_cfepk"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nmxbk"]
 texture = ExtResource("1_4wi7c")
@@ -55,11 +57,25 @@ tile_set = SubResource("TileSet_mhpbk")
 
 [node name="Buildings" type="Node2D" parent="Level"]
 
-[node name="Area2D" type="Area2D" parent="Level/Buildings"]
+[node name="TownCenter" type="Area2D" parent="Level/Buildings"]
 position = Vector2(480, 270)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Buildings/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Buildings/TownCenter"]
 
-[node name="Sprite2D" type="Sprite2D" parent="Level/Buildings/Area2D"]
-scale = Vector2(0.75, 0.75)
+[node name="Sprite2D" type="Sprite2D" parent="Level/Buildings/TownCenter"]
+scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_h78fi")
+
+[node name="Mine" type="Area2D" parent="Level/Buildings"]
+position = Vector2(864, 504)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Buildings/Mine"]
+
+[node name="Sprite2D" type="Sprite2D" parent="Level/Buildings/Mine"]
+position = Vector2(-800, 8)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_cfepk")
+
+[node name="Player" parent="Level" instance=ExtResource("3_62xm0")]
+position = Vector2(486, 391)
+speed = 200.0
