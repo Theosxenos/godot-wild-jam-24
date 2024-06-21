@@ -41,7 +41,9 @@ animations = [{
 "speed": 10.0
 }]
 
-[node name="Woods" type="Area2D"]
+[node name="Woods" type="Area2D" groups=["woods"]]
+collision_layer = 8
+collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_xr81j")

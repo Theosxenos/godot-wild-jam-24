@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://c7nxwtask3wct"]
+[gd_scene load_steps=8 format=3 uid="uid://c7nxwtask3wct"]
 
 [ext_resource type="Texture2D" uid="uid://ctui0bksnjfbb" path="res://assets/goblin/Torch/Purple/Torch_Purple.png" id="1_31dvm"]
 [ext_resource type="Script" path="res://src/enemy.gd" id="1_yfim5"]
@@ -6,6 +6,63 @@
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pod3n"]
 radius = 4.0
 height = 20.0
+
+[sub_resource type="Animation" id="Animation_0u1px"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [15]
+}
+
+[sub_resource type="Animation" id="Animation_7iywq"]
+resource_name = "attack"
+length = 0.6
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [14, 15, 16, 17, 18, 19]
+}
+
+[sub_resource type="Animation" id="Animation_rddaq"]
+resource_name = "walk"
+length = 0.6
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [7, 8, 9, 10, 11, 12]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_dft0e"]
+_data = {
+"RESET": SubResource("Animation_0u1px"),
+"attack": SubResource("Animation_7iywq"),
+"walk": SubResource("Animation_rddaq")
+}
 
 [node name="Goblin" type="CharacterBody2D"]
 collision_layer = 4
@@ -19,7 +76,14 @@ texture = ExtResource("1_31dvm")
 flip_h = true
 hframes = 7
 vframes = 5
+frame = 15
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_pod3n")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_dft0e")
+}
+autoplay = "walk"

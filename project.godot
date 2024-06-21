@@ -25,8 +25,14 @@ window/stretch/mode="canvas_items"
 
 folder_colors={
 "res://assets/": "yellow",
+"res://assets/art/": "red",
 "res://src/": "green"
 }
+
+[global_group]
+
+woods=""
+mine=""
 
 [input]
 
