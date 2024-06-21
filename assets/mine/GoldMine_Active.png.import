@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b8bo8lnmar2bo"
-path="res://.godot/imported/Tilemap_Flat.png-17d49aab0f2af52ebdfe35a6b52ae696.ctex"
+uid="uid://blbk1kkonssnr"
+path="res://.godot/imported/GoldMine_Active.png-021aa20eed7c5784915194594a018605.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/Tiny Swords (Update 010)/Terrain/Ground/Tilemap_Flat.png"
-dest_files=["res://.godot/imported/Tilemap_Flat.png-17d49aab0f2af52ebdfe35a6b52ae696.ctex"]
+source_file="res://assets/mine/GoldMine_Active.png"
+dest_files=["res://.godot/imported/GoldMine_Active.png-021aa20eed7c5784915194594a018605.ctex"]
 
 [params]
 

@@ -1,7 +1,7 @@
 [gd_scene load_steps=14 format=4 uid="uid://cc4qianjqeiv0"]
 
-[ext_resource type="Texture2D" uid="uid://b8bo8lnmar2bo" path="res://assets/art/Tiny Swords (Update 010)/Terrain/Ground/Tilemap_Flat.png" id="1_4wi7c"]
-[ext_resource type="Texture2D" uid="uid://kl00522huomb" path="res://assets/art/Tiny Swords (Update 010)/Terrain/Ground/Tilemap_Elevation.png" id="2_kic6v"]
+[ext_resource type="Texture2D" uid="uid://b8bo8lnmar2bo" path="res://assets/level/Tilemap_Flat.png" id="1_4wi7c"]
+[ext_resource type="Texture2D" uid="uid://kl00522huomb" path="res://assets/level/Tilemap_Elevation.png" id="2_kic6v"]
 [ext_resource type="PackedScene" uid="uid://duhrhs8fmpu34" path="res://assets/player/player.tscn" id="3_62xm0"]
 [ext_resource type="PackedScene" uid="uid://rcjye6mwd58t" path="res://assets/mine/mine.tscn" id="3_mj8rs"]
 [ext_resource type="PackedScene" uid="uid://b5m56sy555fql" path="res://assets/woods/woods.tscn" id="4_xf7nv"]
