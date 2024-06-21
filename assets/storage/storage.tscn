@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://cd84bk7ic6mab"]
+
+[ext_resource type="Texture2D" uid="uid://refdwew5hlwv" path="res://assets/storage/Storage.png" id="1_6quit"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ulhy6"]
+size = Vector2(96, 80)
+
+[node name="Storage" type="StaticBody2D"]
+collision_layer = 8
+collision_mask = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -32)
+texture = ExtResource("1_6quit")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_ulhy6")

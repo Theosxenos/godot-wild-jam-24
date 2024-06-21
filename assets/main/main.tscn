@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://cc4qianjqeiv0"]
+[gd_scene load_steps=15 format=4 uid="uid://cc4qianjqeiv0"]
 
 [ext_resource type="Texture2D" uid="uid://b8bo8lnmar2bo" path="res://assets/level/Tilemap_Flat.png" id="1_4wi7c"]
 [ext_resource type="Texture2D" uid="uid://kl00522huomb" path="res://assets/level/Tilemap_Elevation.png" id="2_kic6v"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://b5m56sy555fql" path="res://assets/woods/woods.tscn" id="4_xf7nv"]
 [ext_resource type="PackedScene" uid="uid://ditcnl8epvk1t" path="res://assets/house/house.tscn" id="5_22awt"]
 [ext_resource type="PackedScene" uid="uid://b26l3r2pl1anq" path="res://assets/tower/tower.tscn" id="5_xfexb"]
+[ext_resource type="PackedScene" uid="uid://cd84bk7ic6mab" path="res://assets/storage/storage.tscn" id="6_ohmmh"]
 [ext_resource type="PackedScene" uid="uid://c7nxwtask3wct" path="res://assets/goblin/goblin.tscn" id="8_dm7tl"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nmxbk"]
@@ -113,10 +114,10 @@ tile_set = SubResource("TileSet_mhpbk")
 y_sort_enabled = true
 
 [node name="Mine" parent="Level/Buildings" instance=ExtResource("3_mj8rs")]
-position = Vector2(64, 448)
+position = Vector2(128, 384)
 
 [node name="Woods" parent="Level/Buildings" instance=ExtResource("4_xf7nv")]
-position = Vector2(64, 64)
+position = Vector2(128, 128)
 
 [node name="House" parent="Level/Buildings" instance=ExtResource("5_22awt")]
 position = Vector2(288, 96)
@@ -135,6 +136,10 @@ position = Vector2(288, 352)
 
 [node name="House6" parent="Level/Buildings" instance=ExtResource("5_22awt")]
 position = Vector2(288, 416)
+
+[node name="Storage" parent="Level/Buildings" instance=ExtResource("6_ohmmh")]
+position = Vector2(128, 256)
+scale = Vector2(0.5, 0.5)
 
 [node name="Player" parent="Level" instance=ExtResource("3_62xm0")]
 position = Vector2(370, 409)
