@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bodpu878avcf6"
-path="res://.godot/imported/W_Idle_(NoShadow).png-60afe9cc7e4026c63e21c1b2b5ceda19.ctex"
+uid="uid://bmp5tti1556jc"
+path="res://.godot/imported/G_Spawn.png-6aa65fff03b8fc2d30c2cde7ae97aeb4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/Tiny Swords (Update 010)/Resources/Resources/W_Idle_(NoShadow).png"
-dest_files=["res://.godot/imported/W_Idle_(NoShadow).png-60afe9cc7e4026c63e21c1b2b5ceda19.ctex"]
+source_file="res://assets/resource/gold/G_Spawn.png"
+dest_files=["res://.godot/imported/G_Spawn.png-6aa65fff03b8fc2d30c2cde7ae97aeb4.ctex"]
 
 [params]
 

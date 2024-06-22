@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://b5m56sy555fql"]
+[gd_scene load_steps=10 format=3 uid="uid://b5m56sy555fql"]
 
 [ext_resource type="Texture2D" uid="uid://dd6oh1603mm2f" path="res://assets/shared/trees/Tree.png" id="1_1ij0d"]
 [ext_resource type="Script" path="res://src/resource_building.gd" id="1_jf3lf"]
+[ext_resource type="PackedScene" uid="uid://clxyulqgh2puo" path="res://assets/resource/wood/wood.tscn" id="2_c1up3"]
 [ext_resource type="PackedScene" uid="uid://bhnirhnu8qqs1" path="res://assets/collision_boxes/hurtbox.tscn" id="2_y3jhh"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qv7ms"]
@@ -78,6 +79,9 @@ radius = 49.0
 collision_layer = 8
 collision_mask = 0
 script = ExtResource("1_jf3lf")
+resource_scene = ExtResource("2_c1up3")
+spawn_radius = 65
+spawn_radius_max = 70
 max_health = 5
 current_health = 5
 

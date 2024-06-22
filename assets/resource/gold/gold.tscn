@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://c40cfkk0p07gu"]
+
+[ext_resource type="PackedScene" uid="uid://bhgigvok5sw7b" path="res://assets/resource/resource.tscn" id="1_02vuu"]
+[ext_resource type="Texture2D" uid="uid://bmp5tti1556jc" path="res://assets/resource/gold/G_Spawn.png" id="2_wmqkl"]
+
+[node name="Gold" instance=ExtResource("1_02vuu")]
+
+[node name="Sprite2D" parent="." index="0"]
+position = Vector2(-7, -12)
+texture = ExtResource("2_wmqkl")
