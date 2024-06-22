@@ -9,6 +9,8 @@ func _ready() -> void:
 		if c is BaseState:
 			states[c.name] = c
 
+	await get_owner().ready	
+	
 	if current_state:
 		current_state.enter_state()
 

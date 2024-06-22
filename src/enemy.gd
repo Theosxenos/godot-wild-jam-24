@@ -1,10 +1,7 @@
-class_name Enemy extends CharacterBody2D
+class_name Enemy extends Character
 
-@export var speed := 90.0
+#@export var speed := 90.0
+@onready var state_machine: StateMachine = $StateMachine
 
-func _ready() -> void:
-	velocity = Vector2.LEFT * speed
-	
-	
-func _physics_process(_delta: float) -> void:
-	move_and_slide()
+func _on_hitbox_body_entered(body: Node2D) -> void:
+	state_machine.switch_state(state_machine.states.AttackState)

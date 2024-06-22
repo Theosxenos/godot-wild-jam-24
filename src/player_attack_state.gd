@@ -22,7 +22,7 @@ func physics_process_state(_delta: float) -> void:
 	
 func exit_state() -> void:
 	if animation_player.animation_finished.is_connected(attack_animation_finished):
-		animation_player.disconnect("animation_finished", attack_animation_finished)
+		animation_player.animation_finished.disconnect(attack_animation_finished)
 
 
 func attack_animation_finished(_anim_name: StringName) -> void:

@@ -1,10 +1,10 @@
 class_name BaseState extends Node
 
-var player: Player
+var character: Character
 var state_machine: StateMachine
 
 func _ready() -> void:
-	player = get_owner()
+	character = get_owner()
 	state_machine = get_parent()
 	process_mode = Node.PROCESS_MODE_DISABLED
 
