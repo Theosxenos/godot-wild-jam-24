@@ -1,11 +1,15 @@
-[gd_scene load_steps=17 format=3 uid="uid://duhrhs8fmpu34"]
+[gd_scene load_steps=22 format=3 uid="uid://duhrhs8fmpu34"]
 
 [ext_resource type="Script" path="res://src/player.gd" id="1_01niw"]
 [ext_resource type="Texture2D" uid="uid://2ecm8osvr4f0" path="res://assets/player/Pawn_Red.png" id="1_po7aj"]
 [ext_resource type="Script" path="res://src/state_machine.gd" id="3_anbes"]
+[ext_resource type="PackedScene" uid="uid://br31mgcuvkef7" path="res://assets/collision_boxes/interact_area.tscn" id="3_yhkj0"]
 [ext_resource type="Script" path="res://src/player_idle_state.gd" id="4_48cgl"]
 [ext_resource type="Script" path="res://src/player_attack_state.gd" id="5_57qsv"]
 [ext_resource type="Script" path="res://src/player_move_state.gd" id="6_fb88d"]
+[ext_resource type="Script" path="res://src/player_carry_idle.gd" id="7_iilu6"]
+[ext_resource type="Script" path="res://src/player_carry_move_state.gd" id="8_xkvv1"]
+[ext_resource type="Script" path="res://src/player_interact_state.gd" id="9_c7crc"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dkdqa"]
 radius = 4.0
@@ -147,6 +151,9 @@ _data = {
 radius = 8.0
 height = 24.0
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_gdt0k"]
+radius = 30.0
+
 [node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("weapon_pivot")]
 collision_layer = 2
 collision_mask = 13
@@ -178,11 +185,17 @@ position = Vector2(0, -4)
 [node name="Hitbox" type="Area2D" parent="WeaponPivot"]
 position = Vector2(25, 0)
 collision_layer = 0
-collision_mask = 12
+collision_mask = 28
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WeaponPivot/Hitbox"]
 shape = SubResource("CapsuleShape2D_q3knf")
 debug_color = Color(0.926996, 0.183974, 0.49923, 0.42)
+
+[node name="InteractArea" parent="." instance=ExtResource("3_yhkj0")]
+
+[node name="CollisionShape2D" parent="InteractArea" index="0"]
+position = Vector2(0, -6)
+shape = SubResource("CircleShape2D_gdt0k")
 
 [node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("current_state")]
 script = ExtResource("3_anbes")
@@ -199,3 +212,15 @@ animation_player = NodePath("../../AnimationPlayer")
 
 [node name="MoveState" type="Node" parent="StateMachine"]
 script = ExtResource("6_fb88d")
+
+[node name="CarryIdleState" type="Node" parent="StateMachine"]
+script = ExtResource("7_iilu6")
+
+[node name="CarryMoveState" type="Node" parent="StateMachine"]
+script = ExtResource("8_xkvv1")
+
+[node name="InteractState" type="Node" parent="StateMachine" node_paths=PackedStringArray("interact_area")]
+script = ExtResource("9_c7crc")
+interact_area = NodePath("../../InteractArea")
+
+[editable path="InteractArea"]

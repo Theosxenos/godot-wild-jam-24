@@ -19,7 +19,7 @@ collision_mask = 0
 script = ExtResource("1_as4gf")
 resource_scene = ExtResource("2_16ehs")
 max_health = 5
-current_health = 5
+current_health = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.5, 0.5)

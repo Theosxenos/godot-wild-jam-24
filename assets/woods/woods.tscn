@@ -83,7 +83,7 @@ resource_scene = ExtResource("2_c1up3")
 spawn_radius = 65
 spawn_radius_max = 70
 max_health = 5
-current_health = 5
+current_health = 2
 
 [node name="SpriteCenter" type="Sprite2D" parent="."]
 position = Vector2(0, -10)

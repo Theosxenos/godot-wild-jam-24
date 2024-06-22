@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=4 uid="uid://cc4qianjqeiv0"]
+[gd_scene load_steps=18 format=4 uid="uid://cc4qianjqeiv0"]
 
 [ext_resource type="Texture2D" uid="uid://b8bo8lnmar2bo" path="res://assets/level/Tilemap_Flat.png" id="1_4wi7c"]
 [ext_resource type="Texture2D" uid="uid://kl00522huomb" path="res://assets/level/Tilemap_Elevation.png" id="2_kic6v"]
@@ -7,9 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://ck3sx2752vno8" path="res://assets/level/Water/Water.png" id="3_mtv8v"]
 [ext_resource type="PackedScene" uid="uid://b5m56sy555fql" path="res://assets/woods/woods.tscn" id="4_xf7nv"]
 [ext_resource type="PackedScene" uid="uid://ditcnl8epvk1t" path="res://assets/house/house.tscn" id="5_22awt"]
-[ext_resource type="PackedScene" uid="uid://c40cfkk0p07gu" path="res://assets/resource/gold/gold.tscn" id="5_e6hvr"]
 [ext_resource type="PackedScene" uid="uid://b26l3r2pl1anq" path="res://assets/tower/tower.tscn" id="5_xfexb"]
-[ext_resource type="PackedScene" uid="uid://clxyulqgh2puo" path="res://assets/resource/wood/wood.tscn" id="6_7ogag"]
 [ext_resource type="PackedScene" uid="uid://cd84bk7ic6mab" path="res://assets/storage/storage.tscn" id="6_ohmmh"]
 [ext_resource type="PackedScene" uid="uid://c7nxwtask3wct" path="res://assets/goblin/goblin.tscn" id="8_dm7tl"]
 
@@ -131,11 +129,9 @@ y_sort_enabled = true
 
 [node name="Mine" parent="Level/Buildings" instance=ExtResource("3_mj8rs")]
 position = Vector2(128, 384)
-resource_scene = ExtResource("5_e6hvr")
 
 [node name="Woods" parent="Level/Buildings" instance=ExtResource("4_xf7nv")]
 position = Vector2(128, 128)
-resource_scene = ExtResource("6_7ogag")
 spawn_radius = 60
 spawn_radius_max = 65
 
@@ -162,7 +158,7 @@ position = Vector2(288, 352)
 position = Vector2(288, 416)
 
 [node name="Player" parent="Level" instance=ExtResource("3_62xm0")]
-position = Vector2(370, 409)
+position = Vector2(125, 338)
 speed = 200.0
 
 [node name="BuildArea" type="Area2D" parent="Level"]

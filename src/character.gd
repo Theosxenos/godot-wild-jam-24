@@ -6,6 +6,9 @@ class_name Character extends CharacterBody2D
 
 @export_category("Nodes")
 @export var weapon_pivot: Node2D
+@export var carry_position := Vector2(0,35)
+
+var carried_object: SpawnableResource
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var sprite_2d: Sprite2D = $Sprite2D
