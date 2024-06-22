@@ -1,17 +1,41 @@
-[gd_scene load_steps=3 format=3 uid="uid://rcjye6mwd58t"]
+[gd_scene load_steps=6 format=3 uid="uid://rcjye6mwd58t"]
 
+[ext_resource type="Script" path="res://src/resource_building.gd" id="1_as4gf"]
 [ext_resource type="Texture2D" uid="uid://blbk1kkonssnr" path="res://assets/mine/GoldMine_Active.png" id="1_pl806"]
+[ext_resource type="PackedScene" uid="uid://bhnirhnu8qqs1" path="res://assets/collision_boxes/hurtbox.tscn" id="3_j66uy"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_i2nc2"]
-radius = 64.0
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_71avb"]
+radius = 17.0
+height = 54.0
 
-[node name="Mine" type="Area2D" groups=["mine"]]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_f5ktv"]
+radius = 24.0
+height = 78.0
+
+[node name="Mine" type="StaticBody2D"]
 collision_layer = 8
 collision_mask = 0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_i2nc2")
+script = ExtResource("1_as4gf")
+max_health = 5
+current_health = 5
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("1_pl806")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_71avb")
+
+[node name="Hurtbox" parent="." groups=["mine"] instance=ExtResource("3_j66uy")]
+position = Vector2(0, -3)
+collision_layer = 8
+
+[node name="CollisionShape2D" parent="Hurtbox" index="0"]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_f5ktv")
+debug_color = Color(0, 0.6, 0.270588, 0.419608)
+
+[connection signal="hit" from="Hurtbox" to="." method="_on_hurtbox_hit"]
+
+[editable path="Hurtbox"]

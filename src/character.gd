@@ -1,6 +1,10 @@
 class_name Character extends CharacterBody2D
 
+@export_category("Stats")
 @export var speed := 70.0
+@export var attack_damage := 1
+
+@export_category("Nodes")
 @export var weapon_pivot: Node2D
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
