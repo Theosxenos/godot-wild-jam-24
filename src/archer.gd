@@ -12,6 +12,8 @@ var is_shooting := false
 
 func _process(_delta: float) -> void:
 	if targets.size() == 0 and not current_target:
+		if not animation_player.is_playing():
+			animation_player.play("idle")
 		return
 	
 	if is_shooting:
@@ -32,6 +34,9 @@ func stop_shooting() -> void:
 
 	
 func shoot() -> void:
+	if not current_target:
+		return
+	
 	is_shooting = true
 	var arrow := arrow_scene.instantiate() as Arrow
 	arrow.direction = arrow_position.global_position.direction_to(current_target.global_position)

@@ -1,10 +1,11 @@
-[gd_scene load_steps=12 format=3 uid="uid://c7nxwtask3wct"]
+[gd_scene load_steps=14 format=3 uid="uid://c7nxwtask3wct"]
 
 [ext_resource type="Texture2D" uid="uid://ctui0bksnjfbb" path="res://assets/goblin/Torch/Purple/Torch_Purple.png" id="1_31dvm"]
 [ext_resource type="Script" path="res://src/enemy.gd" id="1_yfim5"]
 [ext_resource type="Script" path="res://src/state_machine.gd" id="3_576yt"]
 [ext_resource type="Script" path="res://src/enemy_move_state.gd" id="4_n18si"]
 [ext_resource type="Script" path="res://src/enemy_attack_state.gd" id="5_vh3od"]
+[ext_resource type="PackedScene" uid="uid://bhnirhnu8qqs1" path="res://assets/collision_boxes/hurtbox.tscn" id="6_13scq"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pod3n"]
 radius = 4.0
@@ -70,6 +71,10 @@ _data = {
 [sub_resource type="CircleShape2D" id="CircleShape2D_ntgus"]
 radius = 20.0998
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kiswe"]
+radius = 12.0
+height = 34.0
+
 [node name="Goblin" type="CharacterBody2D"]
 collision_layer = 4
 collision_mask = 11
@@ -93,6 +98,7 @@ libraries = {
 }
 
 [node name="Hitbox" type="Area2D" parent="."]
+visible = false
 collision_layer = 0
 collision_mask = 10
 
@@ -115,4 +121,15 @@ script = ExtResource("5_vh3od")
 wait_time = 0.3
 one_shot = true
 
+[node name="Hurtbox" parent="." instance=ExtResource("6_13scq")]
+position = Vector2(0, -13)
+collision_layer = 4
+
+[node name="CollisionShape2D" parent="Hurtbox" index="0"]
+shape = SubResource("CapsuleShape2D_kiswe")
+debug_color = Color(2.11775e-06, 0.645164, 0.265963, 0.42)
+
 [connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]
+[connection signal="hit" from="Hurtbox" to="." method="_on_hurtbox_hit"]
+
+[editable path="Hurtbox"]

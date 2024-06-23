@@ -1,5 +1,6 @@
 class_name Arrow extends Area2D
 
+@export var damage := 1
 @export var max_range := 300
 @export var speed := 200.0
 
@@ -15,3 +16,11 @@ func _process(delta: float) -> void:
 		queue_free()
 	
 	position += direction * speed * delta
+
+
+func _on_area_entered(area: Area2D) -> void:
+	if not area is Hurtbox:
+		return
+	
+	(area as Hurtbox).take_hit(damage)
+	queue_free()
