@@ -15,13 +15,11 @@ func _on_body_entered(body: Node2D) -> void:
 func pickup(character: Character) -> void:
 	_character = character
 	# z_index = 5
-	set_deferred("monitoring", false)
-	set_deferred("monitorable", false)
+	$CollisionShape2D.set_deferred("disabled", true)
 
 
 func drop(position: Vector2) -> void:
 	_character = null
 	global_position = position
 	# z_index = 0
-	set_deferred("monitoring", true)
-	set_deferred("monitorable", true)
+	$CollisionShape2D.set_deferred("disabled", false)
