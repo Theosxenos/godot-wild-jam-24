@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=4 uid="uid://cc4qianjqeiv0"]
+[gd_scene load_steps=22 format=4 uid="uid://cc4qianjqeiv0"]
 
 [ext_resource type="Texture2D" uid="uid://b8bo8lnmar2bo" path="res://assets/level/Tilemap_Flat.png" id="1_4wi7c"]
 [ext_resource type="Script" path="res://src/main.gd" id="1_o88k7"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://c7nxwtask3wct" path="res://assets/goblin/goblin.tscn" id="8_dm7tl"]
 [ext_resource type="Script" path="res://src/build_area.gd" id="10_mfua8"]
 [ext_resource type="PackedScene" uid="uid://bm1vwcbnqhpee" path="res://assets/hud/hud.tscn" id="11_8vw2w"]
+[ext_resource type="Script" path="res://src/mob_spawner.gd" id="13_jh3d7"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6lc7x"]
 texture = ExtResource("3_mtv8v")
@@ -173,6 +174,7 @@ position = Vector2(125, 338)
 speed = 200.0
 
 [node name="BuildArea" type="Area2D" parent="Level"]
+y_sort_enabled = true
 position = Vector2(320, 64)
 collision_layer = 0
 collision_mask = 16
@@ -184,13 +186,32 @@ position = Vector2(256, 192)
 shape = SubResource("RectangleShape2D_ds3pf")
 
 [node name="Tower" parent="Level" instance=ExtResource("5_xfexb")]
-position = Vector2(416, 288)
+position = Vector2(608, 288)
 
 [node name="Tower2" parent="Level" instance=ExtResource("5_xfexb")]
 position = Vector2(416, 224)
 
-[node name="Goblin" parent="Level" instance=ExtResource("8_dm7tl")]
-position = Vector2(864, 304)
+[node name="MobSpawner" type="Node" parent="Level"]
+script = ExtResource("13_jh3d7")
+mob_scene = ExtResource("8_dm7tl")
+
+[node name="Marker2D" type="Marker2D" parent="Level/MobSpawner"]
+position = Vector2(992, 104)
+
+[node name="Marker2D2" type="Marker2D" parent="Level/MobSpawner"]
+position = Vector2(992, 168)
+
+[node name="Marker2D3" type="Marker2D" parent="Level/MobSpawner"]
+position = Vector2(992, 232)
+
+[node name="Marker2D4" type="Marker2D" parent="Level/MobSpawner"]
+position = Vector2(992, 296)
+
+[node name="Marker2D5" type="Marker2D" parent="Level/MobSpawner"]
+position = Vector2(992, 360)
+
+[node name="Marker2D6" type="Marker2D" parent="Level/MobSpawner"]
+position = Vector2(992, 424)
 
 [node name="Hud" parent="." instance=ExtResource("11_8vw2w")]
 unique_name_in_owner = true
