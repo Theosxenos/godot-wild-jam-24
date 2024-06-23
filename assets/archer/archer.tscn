@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://bj5qvuub41u1h"]
+[gd_scene load_steps=9 format=3 uid="uid://bj5qvuub41u1h"]
 
 [ext_resource type="Script" path="res://src/archer.gd" id="1_p4rl3"]
 [ext_resource type="Texture2D" uid="uid://bn0yyj5th5ch3" path="res://assets/archer/Archer_Red.png" id="2_alin2"]
+[ext_resource type="PackedScene" uid="uid://2gfbetlsjytg" path="res://assets/archer/arrow.tscn" id="3_86ux2"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mnrkd"]
 
@@ -54,6 +55,20 @@ tracks/0/keys = {
 "update": 1,
 "values": [32, 33, 34, 35, 36, 37, 38, 39]
 }
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.6),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"shoot"
+}]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_1tiul"]
 _data = {
@@ -64,6 +79,7 @@ _data = {
 
 [node name="Archer" type="CharacterBody2D"]
 script = ExtResource("1_p4rl3")
+arrow_scene = ExtResource("3_86ux2")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -24)
@@ -83,3 +99,8 @@ libraries = {
 "": SubResource("AnimationLibrary_1tiul")
 }
 autoplay = "idle"
+
+[node name="ArrowPosition" type="Marker2D" parent="."]
+position = Vector2(31, -14)
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
