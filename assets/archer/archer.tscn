@@ -1,0 +1,85 @@
+[gd_scene load_steps=8 format=3 uid="uid://bj5qvuub41u1h"]
+
+[ext_resource type="Script" path="res://src/archer.gd" id="1_p4rl3"]
+[ext_resource type="Texture2D" uid="uid://bn0yyj5th5ch3" path="res://assets/archer/Archer_Red.png" id="2_alin2"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mnrkd"]
+
+[sub_resource type="Animation" id="Animation_rdnvi"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+
+[sub_resource type="Animation" id="Animation_74207"]
+resource_name = "idle"
+length = 0.6
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5]
+}
+
+[sub_resource type="Animation" id="Animation_ffphc"]
+resource_name = "shoot"
+length = 0.8
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [32, 33, 34, 35, 36, 37, 38, 39]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1tiul"]
+_data = {
+"RESET": SubResource("Animation_rdnvi"),
+"idle": SubResource("Animation_74207"),
+"shoot": SubResource("Animation_ffphc")
+}
+
+[node name="Archer" type="CharacterBody2D"]
+script = ExtResource("1_p4rl3")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -24)
+texture = ExtResource("2_alin2")
+hframes = 8
+vframes = 7
+frame = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_mnrkd")
+disabled = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_1tiul")
+}
+autoplay = "idle"

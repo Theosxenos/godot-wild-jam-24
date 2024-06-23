@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cq1dsdef04v6i"
-path="res://.godot/imported/Arrow.png-33e19a69828b7626eebdfd7acf0563b3.ctex"
+uid="uid://bn0yyj5th5ch3"
+path="res://.godot/imported/Archer_Red.png-fe3bdffb715a82e86de9fcf289b2cffb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/Tiny Swords (Update 010)/Factions/Knights/Troops/Archer/Arrow/Arrow.png"
-dest_files=["res://.godot/imported/Arrow.png-33e19a69828b7626eebdfd7acf0563b3.ctex"]
+source_file="res://assets/archer/Archer_Red.png"
+dest_files=["res://.godot/imported/Archer_Red.png-fe3bdffb715a82e86de9fcf289b2cffb.ctex"]
 
 [params]
 
