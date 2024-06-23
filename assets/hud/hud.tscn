@@ -75,7 +75,7 @@ stretch_mode = 5
 [node name="GoldLabel" type="Label" parent="ResourceContainer/GoldContainer"]
 unique_name_in_owner = true
 layout_mode = 2
-text = "2/3"
+text = "{0}"
 
 [node name="WoodContainer" type="HBoxContainer" parent="ResourceContainer"]
 layout_mode = 2
@@ -94,4 +94,4 @@ stretch_mode = 5
 [node name="WoodLabel" type="Label" parent="ResourceContainer/WoodContainer"]
 unique_name_in_owner = true
 layout_mode = 2
-text = "2/3"
+text = "{0}"
