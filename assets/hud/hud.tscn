@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://bm1vwcbnqhpee"]
 
 [ext_resource type="Script" path="res://src/hud.gd" id="1_8kkfy"]
-[ext_resource type="Texture2D" uid="uid://cvy6wt5slwj37" path="res://assets/art/Tiny Swords (Update 010)/UI/Banners/Banner_Horizontal.png" id="1_kw2b1"]
+[ext_resource type="Texture2D" uid="uid://cvy6wt5slwj37" path="res://assets/hud/Banner_Horizontal.png" id="1_kw2b1"]
 [ext_resource type="Texture2D" uid="uid://dfkdbitpi3mv8" path="res://assets/hud/G_Idle_(NoShadow).png" id="2_4kgju"]
 [ext_resource type="Texture2D" uid="uid://defmdjksrji07" path="res://assets/art/Tiny Swords (Update 010)/UI/Banners/Banner_Connection_Left.png" id="3_fkvh2"]
 [ext_resource type="Texture2D" uid="uid://dj818dkh5h0k6" path="res://assets/art/Tiny Swords (Update 010)/UI/Banners/Banner_Connection_Down.png" id="4_1kpxb"]
