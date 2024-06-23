@@ -1,5 +1,7 @@
 class_name SpawnableResource extends Area2D
 
+@export var resource_name: String
+
 var _character: Character
 
 func _process(_delta: float) -> void:
@@ -21,5 +23,4 @@ func pickup(character: Character) -> void:
 func drop(position: Vector2) -> void:
 	_character = null
 	global_position = position
-	# z_index = 0
 	$CollisionShape2D.set_deferred("disabled", false)

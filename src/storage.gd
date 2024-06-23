@@ -22,8 +22,8 @@ func _on_drop_area_area_entered(area: Area2D) -> void:
 	var anim_player := resource.get_node("AnimationPlayer") as AnimationPlayer
 	anim_player.play("spawn", -1, -1.3, true)
 	
-	resource_amount[resource.name] += 1
-	stored_resource_updated.emit(resource.name, resource_amount[resource.name])
+	resource_amount[resource.resource_name] += 1
+	stored_resource_updated.emit(resource.resource_name, resource_amount[resource.resource_name])
 	
 	await anim_player.animation_finished
 	resource.queue_free()

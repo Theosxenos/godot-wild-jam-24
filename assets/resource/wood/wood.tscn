@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://l0fbt8ab458b" path="res://assets/resource/wood/W_Spawn.png" id="2_1qny1"]
 
 [node name="Wood" instance=ExtResource("1_u7241")]
+resource_name = "Wood"
 
 [node name="Sprite2D" parent="." index="0"]
 position = Vector2(0, -23)
