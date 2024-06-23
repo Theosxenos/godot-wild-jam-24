@@ -3,7 +3,7 @@ class_name Archer extends CharacterBody2D
 @export var arrow_scene: PackedScene
 
 var current_target: Enemy
-var targets: Array[Enemy]
+var targets: Array[Enemy] = []
 
 var is_shooting := false
 
@@ -20,13 +20,22 @@ func _process(_delta: float) -> void:
 		return
 		
 	if current_target:
-		animation_player.play("shoot")
+		if not is_instance_valid(current_target):
+			current_target = null
+		else:
+			animation_player.play("shoot")
 	else:
-		current_target = targets.pop_front()
+		while targets.size() > 0:
+			current_target = targets.pop_front()
+			if is_instance_valid(current_target):
+				break
+		if not is_instance_valid(current_target):
+			current_target = null
 
 
 func start_shooting(target: Enemy) -> void:
-	targets.append(target)
+	if is_instance_valid(target):
+		targets.append(target)
 
 
 func stop_shooting() -> void:
@@ -34,7 +43,7 @@ func stop_shooting() -> void:
 
 	
 func shoot() -> void:
-	if not current_target:
+	if not current_target or not is_instance_valid(current_target):
 		return
 	
 	is_shooting = true
@@ -45,7 +54,7 @@ func shoot() -> void:
 
 
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
-	if not anim_name == "shoot":
+	if anim_name != "shoot":
 		return
 	
 	is_shooting = false
