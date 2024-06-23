@@ -16,6 +16,7 @@ func pickup(character: Character) -> void:
 	_character = character
 	# z_index = 5
 	set_deferred("monitoring", false)
+	set_deferred("monitorable", false)
 
 
 func drop(position: Vector2) -> void:
@@ -23,3 +24,4 @@ func drop(position: Vector2) -> void:
 	global_position = position
 	# z_index = 0
 	set_deferred("monitoring", true)
+	set_deferred("monitorable", true)

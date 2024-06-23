@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=4 uid="uid://cc4qianjqeiv0"]
+[gd_scene load_steps=19 format=4 uid="uid://cc4qianjqeiv0"]
 
 [ext_resource type="Texture2D" uid="uid://b8bo8lnmar2bo" path="res://assets/level/Tilemap_Flat.png" id="1_4wi7c"]
 [ext_resource type="Texture2D" uid="uid://kl00522huomb" path="res://assets/level/Tilemap_Elevation.png" id="2_kic6v"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://b26l3r2pl1anq" path="res://assets/tower/tower.tscn" id="5_xfexb"]
 [ext_resource type="PackedScene" uid="uid://cd84bk7ic6mab" path="res://assets/storage/storage.tscn" id="6_ohmmh"]
 [ext_resource type="PackedScene" uid="uid://c7nxwtask3wct" path="res://assets/goblin/goblin.tscn" id="8_dm7tl"]
+[ext_resource type="PackedScene" uid="uid://bm1vwcbnqhpee" path="res://assets/hud/hud.tscn" id="11_8vw2w"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6lc7x"]
 texture = ExtResource("3_mtv8v")
@@ -175,3 +176,5 @@ position = Vector2(416, 224)
 
 [node name="Goblin" parent="Level" instance=ExtResource("8_dm7tl")]
 position = Vector2(864, 304)
+
+[node name="Hud" parent="." instance=ExtResource("11_8vw2w")]

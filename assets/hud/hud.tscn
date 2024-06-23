@@ -1,0 +1,97 @@
+[gd_scene load_steps=8 format=3 uid="uid://bm1vwcbnqhpee"]
+
+[ext_resource type="Script" path="res://src/hud.gd" id="1_8kkfy"]
+[ext_resource type="Texture2D" uid="uid://cvy6wt5slwj37" path="res://assets/art/Tiny Swords (Update 010)/UI/Banners/Banner_Horizontal.png" id="1_kw2b1"]
+[ext_resource type="Texture2D" uid="uid://dfkdbitpi3mv8" path="res://assets/hud/G_Idle_(NoShadow).png" id="2_4kgju"]
+[ext_resource type="Texture2D" uid="uid://defmdjksrji07" path="res://assets/art/Tiny Swords (Update 010)/UI/Banners/Banner_Connection_Left.png" id="3_fkvh2"]
+[ext_resource type="Texture2D" uid="uid://dj818dkh5h0k6" path="res://assets/art/Tiny Swords (Update 010)/UI/Banners/Banner_Connection_Down.png" id="4_1kpxb"]
+[ext_resource type="Texture2D" uid="uid://cx2c7cei3n0o2" path="res://assets/art/Tiny Swords (Update 010)/UI/Banners/Banner_Connection_Right.png" id="5_plvj2"]
+[ext_resource type="Texture2D" uid="uid://bodpu878avcf6" path="res://assets/hud/W_Idle_(NoShadow).png" id="6_ca7ux"]
+
+[node name="Hud" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_8kkfy")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 198.0
+offset_bottom = 42.0
+texture = ExtResource("1_kw2b1")
+expand_mode = 3
+
+[node name="Control" type="Control" parent="."]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect" type="TextureRect" parent="Control"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("3_fkvh2")
+
+[node name="TextureRect2" type="TextureRect" parent="Control"]
+layout_mode = 0
+offset_left = 135.0
+offset_top = 43.0
+offset_right = 327.0
+offset_bottom = 235.0
+texture = ExtResource("4_1kpxb")
+
+[node name="TextureRect3" type="TextureRect" parent="Control"]
+layout_mode = 0
+offset_left = 287.0
+offset_top = 20.0
+offset_right = 479.0
+offset_bottom = 212.0
+texture = ExtResource("5_plvj2")
+
+[node name="ResourceContainer" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 41.0
+offset_right = 153.0
+offset_bottom = 34.0
+
+[node name="GoldContainer" type="HBoxContainer" parent="ResourceContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="TextureRect" type="TextureRect" parent="ResourceContainer/GoldContainer"]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("2_4kgju")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="GoldLabel" type="Label" parent="ResourceContainer/GoldContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "2/3"
+
+[node name="WoodContainer" type="HBoxContainer" parent="ResourceContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="TextureRect" type="TextureRect" parent="ResourceContainer/WoodContainer"]
+custom_minimum_size = Vector2(30, 25)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("6_ca7ux")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="WoodLabel" type="Label" parent="ResourceContainer/WoodContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "2/3"

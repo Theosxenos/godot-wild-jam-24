@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bodpu878avcf6"
-path="res://.godot/imported/W_Idle_(NoShadow).png-f8f2ca19049124a2263a8c6507136f03.ctex"
+uid="uid://dfkdbitpi3mv8"
+path="res://.godot/imported/G_Idle_(NoShadow).png-57446e02efaf61827ccb74a0495fe907.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/resource/wood/W_Idle_(NoShadow).png"
-dest_files=["res://.godot/imported/W_Idle_(NoShadow).png-f8f2ca19049124a2263a8c6507136f03.ctex"]
+source_file="res://assets/hud/G_Idle_(NoShadow).png"
+dest_files=["res://.godot/imported/G_Idle_(NoShadow).png-57446e02efaf61827ccb74a0495fe907.ctex"]
 
 [params]
 
