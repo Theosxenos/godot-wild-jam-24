@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://d1mfr4lcgdkfv"]
+
+[ext_resource type="Script" path="res://src/spawnable_tower.gd" id="1_r40cp"]
+[ext_resource type="Texture2D" uid="uid://03pc8f1d0qet" path="res://assets/tower/Tower_Red.png" id="1_xiae3"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_05ons"]
+radius = 24.0
+
+[node name="SpawnableTower" type="Area2D"]
+collision_layer = 16
+collision_mask = 0
+script = ExtResource("1_r40cp")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -25)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_xiae3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_05ons")
