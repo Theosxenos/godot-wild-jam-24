@@ -32,14 +32,14 @@ func _on_drop_area_area_entered(area: Area2D) -> void:
 	
 	
 func spawn_tower() -> void:
-	if resource_amount.Gold < Main.tower_gold_cost and resource_amount.Wood < Main.tower_wood_cost:
+	if resource_amount.Gold < Main.tower_gold_cost or resource_amount.Wood < Main.tower_wood_cost:
 		return
 		
 	var tower := tower_scene.instantiate() as Area2D
 	var angle := randf_range(0, TAU)
 	var direction := Vector2(sin(angle), cos(angle))
 	
-	tower.position = direction * 60
+	tower.position = direction * 70
 
 	resource_amount.Gold -= Main.tower_gold_cost
 	resource_amount.Wood -= Main.tower_wood_cost
